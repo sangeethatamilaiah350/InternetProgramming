@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <form action="http://localhost:8080/lab_5/salary" >
+           Name: <input type="text" name="name">
+           
+            <br>
+           Enter the city to know the weather: <input type="text" name="city">
+            <br>
+            <input type="submit" value="enter">
+            
+        </form>
+    </body>
+</html>
