@@ -19,11 +19,11 @@ import javax.servlet.http.HttpServletResponse;
 class Book{
     String title;
     String author;
-    String price;
-    String stock;
+    double price;
+    int stock;
     String publisher;
 
-    public Book(String title, String author, String price, String stock, String publisher) {
+    public Book(String title, String author, double price, int stock, String publisher) {
         this.title = title;
         this.author = author;
         this.price = price;
@@ -39,11 +39,11 @@ class Book{
         return author;
     }
 
-    public String getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public String getStock() {
+    public int getStock() {
         return stock;
     }
 
@@ -76,10 +76,15 @@ public class salary extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             HashMap<String,Book> Books=new HashMap<>();
-            Book book1=new Book("othello","shakespeare","980","2","DEvan");
-            Book book2=new Book("thirukural","thiruvalluvar","1331","20","DEvan");
+            Book book1=new Book("othello","shakespeare",980,2,"DEvan");
+            Book book2=new Book("thirukural","thiruvalluvar",1331,20,"DEvan");
+            Book book3=new Book("wings of fire","APJ Abdul Kalam",145,21,"DEvan");
+            Book book4=new Book("fear not","vivekanandar",131,80,"DEvan");
+            
             Books.put("othello",book1);
             Books.put("thirukural",book2);
+            Books.put("wings of fire", book3);
+            Books.put("fear not",book4);
             
              
             out.println("<h3>Welcom to the Hamen Book Shop " +  "</h3>");
@@ -94,6 +99,16 @@ public class salary extends HttpServlet {
                     out.println("<h5>BookPrice: " + object.getPrice()+ "</h5>");
                     out.println("<h5>Stock: " + object.getStock()+ "</h5>");
                     out.println("<h5>Publisher: " + object.getPublisher()+ "</h5>");
+                    int copies=Integer.parseInt(request.getParameter("count"));
+                    
+                    if(copies<=object.stock){
+                         
+                         double amount=object.getPrice()*copies;
+                      out.println("<h5>Total cost:" +amount + "</h5>");
+                    }
+                    else{
+                       out.println("<h5>Required copies not in stock</h5>");  
+                    }
                 }
                 else{
                     out.println("<h3>  No such author ... </h3>");
