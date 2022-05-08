@@ -1,0 +1,121 @@
+<!DOCTYPE
+html>
+<html>
+<head>
+<title>Formvalidation</title>
+<style>
+#t1{
+margin: 25px;
+text-align :right;
+width:300px;}
+</style>
+</head>
+<body style="background-color:pink">
+<h3>What of car would you like to buy?</h3>
+<form name="myform" onsubmit="validate()" >
+<input type="radio" name="car" id="c1"
+value="proton" >Proton</input>
+<input type="radio" name="car" id="c1"
+value="honda">Honda</input>
+<input type="radio" name="car" id="c1"
+value="ferri">Ferri</input>
+<input type="radio" name="car" id="c1"
+value="ford">Ford</input>
+<h3>What color do you want on your
+car?</h3>
+<select id="colors" name="colorc">
+a color</option>
+<option value="choicecolor">Select
+value="pink">Pink</option>
+<option
+value="yellow">Yellow</option>
+<option
+<option value="red">Red</option>
+value="green">Green</option>
+<option
+value="black">Black</option>
+<option
+value="white">White</option>
+<option
+</select>
+id="other"><br>
+Other: <input type="text" name="color"
+preferrence : </h3>
+<h3>Enter other specification for your
+35></textarea><br>
+<textarea name="textarea" rows=6 cols =
+u:</h3>
+<h3>Tell us how to get in touch with
+<div id=t1 name="mytext">
+name="name"><br><br>
+Name:<input type="text"
+name="number"><br><br>
+Telephone: <input type="text"
+name="mail"><br>
+Email: <input type="text"
+</div>
+<h3><input type="checkbox"
+name="checkbox" value="contact">Please contact me as soon as
+possible</input></h3>
+<h3>My Mail: <a
+href="">abc@gmail.com</a></h3>
+<input type="submit" value="Submit"
+style="margin: 25px;"></input>
+<input type="button" name="clear"
+value="Clear"></button><br>
+<a href ="">Back to mail page</a>
+</form>
+</body>
+<script>
+function validate() {
+var c = document.querySelector(
+'input[name="car"]:checked');
+if(c==null){
+alert("Please select the car");
+return false;}
+var color = document.forms["myform"]["colorc"].value;
+var other = document.forms["myform"]["color"].value;
+if(color=="choicecolor"&&other==""){
+alert("Please select the color");
+return false;
+}
+var textarea =
+document.forms["myform"]["textarea"].value;
+if(textarea==""){
+alert("Please enter the specifications");
+return false;}
+if(textarea.length<10 || textarea.length>15){
+alert("Please specifications lesser than 15 and
+greater than 10");
+return false;}
+var letters = /^[A-Za-z]+$/;
+var name = document.forms["myform"]["name"].value;
+if(!name.match(letters))
+{
+alert("Enter the name correctly");
+return false;}
+var number =
+document.forms["myform"]["number"].value;
+if(number==""){
+alert("Please enter number ");
+return false;}
+if(isNaN(number)){
+alert("Please enter number correctly ");
+return false;}
+var mail = document.forms["myform"]["mail"].value;
+if(mail==""){
+alert("Please enter the mail ");
+return false;}
+var mailex = /^[a-zA-Z]+@[a-zA-Z]+(?:\.[a-zA-Z]+)*$/;
+if(!mail.match(mailex))
+{
+alert("Enter the mail correctly");
+return false;}
+var c2 = document.querySelector(
+'input[name="checkbox"]:checked');
+if(c2==null){
+alert("Please tick the contact me box");
+return false;}
+}
+</script>
+</html>
