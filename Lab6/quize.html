@@ -1,0 +1,111 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            .container{
+                margin:120px;
+                top:120px;
+                display:flex;
+                flex-direction:column;
+                background-color:powderblue;
+                height:900px;
+               
+                align:center;
+                border-radius: 20%;
+            }
+            .info{
+                margin:25px;
+                top:25px;
+                border-radius: 30%;
+                border-color:coral;
+                background-color:white;
+               
+            }
+            .questions{
+              margin:15px;
+              padding-left: 0px;
+              background-color: white;
+              border-radius:5px;
+            }
+           
+        </style>
+    </head>
+    <body>
+    <center class="container">
+        <h1>WELCOME TO QUIZ ZONE...</h1>
+       
+        <form method="get" action="http://localhost:8080/lab_5/quiz">
+            <div class="info" >
+            Name:<input type="text"  name="user"><br><br>
+            RollNo:<input type="text" id="roll" name="roll">
+        </div>
+            <div class="questions">
+            <p>1.servlet a client side programing</p>
+            <input type="radio" name="q1" value="true">True
+             <input type="radio" name="q1" value="false">false
+            </div>
+           
+            <div class="questions">
+            <p>2.java is a object-oriented programming language</p>
+            <input type="radio" name="q2" value="true">True
+             <input type="radio" name="q2" value="false">false
+            </div>
+           
+            <div class="questions">
+            <p>3.Which object of HttpSession can be used to view and manipulate information about a session?</p>
+             <input type="radio" name="q3" value="session identifier">session identifier
+             <input type="radio" name="q3" value="creation time"> creation time
+             <input type="radio" name="q3" value="last accessed time">last accessed time
+             <input type="radio" name="q3" value="All mentioned above">All mentioned above
+            </div>
+           
+            <div class="questions">
+            <p>4.What type of servlets use these methods doGet(), doPost(),doHead, doDelete(), doTrace()?</p>
+            <input type="radio" name="q4" value="Genereic Servlets">Genereic Servlets
+             <input type="radio" name="q4" value="HttpServlets">HttpServlets
+             <input type="radio" name="q4" value="All of the above"> All of the above
+             <input type="radio" name="q4" value="false">false
+            </div>
+           
+           
+            <div class="questions">
+            <p>5.Which cookie it is valid for single session only and it is removed each time when the user closes the browser?</p>
+            <input type="radio" name="q5" value="Persistent cookie">Persistent cookie
+            <input type="radio" name="q5" value="Non-Persistent cookie">Non-Persistent cookie
+            </div>
+           
+            <div class="questions">
+            <p>6.Which cookie it is valid for single session only and it is removed each time when the user closes the browser?</p>
+            <input type="radio" name="q6" value="forward"> forward()
+            <input type="radio" name="q6" value="sendRedirect()">sendRedirect()
+            <input type="radio" name="q6" value="include()">include()
+           
+            </div>
+            <div class="questions">
+            <p>7.Which HTTP Request method is non-idempotent?</p>
+            <input type="radio" name="q7" value="GET()">GET()
+            <input type="radio" name="q7" value="POST">POST()
+            <input type="radio" name="q7" value="both">both
+           
+            </div>
+            
+            <div class="questions">
+            <p>8.Which HTTP Request method is idempotent?</p>
+            <input type="radio" name="q8" value="GET()">GET()
+            <input type="radio" name="q8" value="POST">POST()
+            <input type="radio" name="q8" value="both">both
+           
+            </div>
+           
+            <br><br>
+            <input type="submit" >
+        </form>
+     </center>
+    </body>
+</html>
