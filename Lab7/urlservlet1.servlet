@@ -34,7 +34,7 @@ public class urlServlet1 extends HttpServlet {
         try ( PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             String name=request.getParameter("name");
-            
+             String pwd=request.getParameter("pwd");
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -42,7 +42,7 @@ public class urlServlet1 extends HttpServlet {
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Hello " + name + "!!</h1>");
-            out.println("<a href='http://localhost:38769/lab_7/urlServlet2?uname="+name+"'>View your page</a>");
+            out.println("<a href='http://localhost:38769/lab_7/urlServlet2?uname="+name+"'+"pwd="+pwd+"'>View your page</a>");
             out.println("</body>");
             out.println("</html>");
         }
