@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+<college>
+
+<student>
+    <id>1</id>
+    <name>sangeetha </name>
+    <department>CSE</department>
+    <roll>19</roll>
+    <age>21</age>
+    
+</student>
+
+<student>
+    <id>2</id>
+    <name>geetha </name>
+    <department>CSE</department>
+    <roll>20</roll>
+    <age>21</age>
+    
+</student>
+
+<student>
+    <id>3</id>
+    <name>renu </name>
+    <department>CSE</department>
+    <roll>21</roll>
+    <age>21</age>
+    
+</student>
+</college>
+
