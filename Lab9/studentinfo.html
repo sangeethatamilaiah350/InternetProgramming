@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Start Page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+    </head>
+    <body>
+        
+    <center>
+        
+        <div >
+            Enter ID<input type="text" placeholder="your id" id="roll">
+            <p id="ids"></p>
+            <button onclick="load()">load data</button>
+        </div>
+       
+    </center>
+        <script>
+            function load(){
+            var obj=new XMLHttpRequest();
+            obj.onreadystatechange= function (){
+                if(this.readyState === 4 && this.status === 200){
+                    var a=this.responseXML;
+                    students(a);
+                }
+                
+               };
+               
+              obj.open("GET","studentinfo.xml",true);
+              obj.send();
+    
+    }
+    function students( list){
+        var names = list.getElementsByTagName("student");
+        var num=document.getElementById("roll").value;
+        var flag=0;
+        var table="<table border='2px' > <tr><th>ID</th><td>";
+        for(var j = 0; j < names.length; j++) {
+            
+            
+            if(num.match(names[j].getElementsByTagName("id")[0].childNodes[0].nodeValue)){
+                table+= names[j].getElementsByTagName("id")[0].childNodes[0].nodeValue+"</td></tr><tr><th>NAME</th><td>" ;
+                table+= names[j].getElementsByTagName("name")[0].childNodes[0].nodeValue +"</td></tr><tr><th>DEPARTMENT</th><td>";
+                table+=names[j].getElementsByTagName("department")[0].childNodes[0].nodeValue +"</td></tr><tr><th>ROLL</th><td>" ;
+                table+=names[j].getElementsByTagName("roll")[0].childNodes[0].nodeValue +"</td></tr><tr><th>AGE</th><td>";
+                table+=names[j].getElementsByTagName("age")[0].childNodes[0].nodeValue+"</td></tr></table>" ;
+                document.getElementById("ids").innerHTML=table;
+                flag=1;
+            }
+       
+       }
+       // console.log(names);
+       if(flag===0){
+           document.getElementById("ids").innerHTML="no such id";
+       }
+    }
+            
+        </script>
+    </body>
+</html>
